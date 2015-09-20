@@ -18,7 +18,7 @@ Can also add this to only a portion of web page, i.e. <div ng-app="studentRoster
           <ul>
             <!-- ng-repeat directive is used to iterate through data that is stored in the $scope via the controller -->
             <li ng-repeat="item in students">
-              {{ item.name }}
+              {{ item.name }} <a ng-click="deletesStudent(item)">Delete</a>
             </li>
           </ul>
         </div>
