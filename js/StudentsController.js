@@ -10,5 +10,5 @@ studentRoster.controller('StudentsCtrl', function StudentsCtrl($scope) {
   $scope.deleteStudent = function(student) {
     var index = $scope.students.indexOf(student);
     $scope.students.splice(index, 1);
-  }
+  };
 });
