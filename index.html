@@ -1,12 +1,29 @@
 <!DOCTYPE html>
-<html>
+<!-- First directive here ng-app tells Angular that entire webpage will be controlled by Angular.
+Can also add this to only a portion of web page, i.e. <div ng-app="studentRoster"> -->
+<html ng-app="studentRoster">
   <head>
     <title>Student App</title>
     <script src="lib/angular.js"></script>
     <script src="app.js"></script>
+    <script src="js/StudentsController.js"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css">
   </head>
   <body>
+    <!-- ng-controller specifies that any directives inside of this <div> should refer to the StudentsCtrl controller, and any data that it pulls should come from the $scope in that controller. -->
+    <div class="container" ng-controller="StudentsCtrl">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Student List</h2>
+          <ul>
+            <!-- ng-repeat directive is used to iterate through data that is stored in the $scope via the controller -->
+            <li ng-repeat="item in students">
+              {{ item.name }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
   </body>
 </html>
